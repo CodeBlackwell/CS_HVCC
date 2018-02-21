@@ -1,8 +1,10 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { Link } from 'react-router'
-import Greeting from '../components/greeting'
-import { KEY as HOMEPAGE_KEY } from '../constants/homepage_constants'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router';
+
+import SignInForm from './SignInForm';
+import Greeting from '../components/greeting';
+import { KEY as HOMEPAGE_KEY } from '../constants/homepage_constants';
 
 
 class Homepage extends Component {
@@ -13,9 +15,9 @@ class Homepage extends Component {
                 {
                     // <Header /> - Welcome to the HVCC online student aid portal
                     // <HVCC Icon />
-                    // <Sign in />
                 }
-                <Link to="profile">Click to display my details!</Link>
+                <SignInForm />
+                <Link to="profile">play my details!</Link>
                 { this.props.children }
             </div>
         );
@@ -26,7 +28,7 @@ const mapStateToProps = function (state) {
     //@formatter:off
     const {
         [HOMEPAGE_KEY]: {
-        greeting,
+        greeting
         }
     } = state;
     //@formatter:on

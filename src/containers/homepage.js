@@ -10,9 +10,11 @@ class Homepage extends Component {
         const { greeting } = this.props;
         return (
             <div className="homepage">
-                <Greeting
-                    greeting={ greeting }
-                />
+                {
+                    // <Header /> - Welcome to the HVCC online student aid portal
+                    // <HVCC Icon />
+                    // <Sign in />
+                }
                 <Link to="profile">Click to display my details!</Link>
                 { this.props.children }
             </div>

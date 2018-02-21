@@ -16,9 +16,9 @@ class Homepage extends Component {
                     // <Header /> - Welcome to the HVCC online student aid portal
                     // <HVCC Icon />
                 }
-                <SignInForm />
-                <Link to="profile">play my details!</Link>
+                <Link to="profile">Click to display my details!</Link>
                 { this.props.children }
+                <SignInForm />
             </div>
         );
     }

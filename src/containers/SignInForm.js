@@ -20,7 +20,7 @@ class SignInForm extends Component {
                     <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                         <label className="form-check-label" for="exampleCheck1">Stay logged in</label>
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary">Sign into your HCC portal </button>
             </form>
         )
     }
@@ -30,9 +30,9 @@ export default SignInForm;
 
 const styles = {
     form: {
-        borderWidth: 30,
+        borderWidth: 10,
         borderColor: '#343434',
         borderStyle: 'solid',
-        width: 300
+        width: 600
     }
 }

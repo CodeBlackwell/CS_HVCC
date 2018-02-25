@@ -35,4 +35,6 @@ const styles = {
         borderStyle: 'solid',
         width: 600
     }
-}
+};
+
+//@TODO: Connect to redux state

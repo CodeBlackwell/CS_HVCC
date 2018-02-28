@@ -7,6 +7,7 @@ const logger = require('koa-logger');
 const convert = require('koa-convert');
 const router = require('koa-router')();
 const cors = require('koa-cors');
+const bodyparser = require('koa-bodyparser');
 
 const data = require('./data');
 
@@ -17,8 +18,11 @@ app.use = (x) => _use.call(app, convert(x));
 app.use(logger());
 app.use(serve('./build'));
 app.use(cors(false));
+app.use(bodyparser());
+
 
 router.get('/data', (ctx, next) => {
+    console.log(ctx);
     ctx.body = data;
 });
 

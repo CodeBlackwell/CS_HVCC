@@ -1,49 +1,25 @@
-'use strict';
+const app = express();
+const jwt = require('express-jwt');
+const jwks = require('jwks-rsa');
+const cors = require('cors');
+const bodyParser = require('body-parser');
 
-const port = process.env.PORT || 3000;
-const Koa = require('koa');
-const serve = require('koa-static');
-const logger = require('koa-logger');
-const convert = require('koa-convert');
-const router = require('koa-router')();
-const cors = require('koa-cors');
-const bodyparser = require('koa-bodyparser');
-const jwt = require('koa-jwt');
-const jwksRsa = require('jwks-rsa');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
 
-const data = require('./data');
-
-const app = new Koa();
-const _use = app.use;
-
-app.use = (x) => _use.call(app, convert(x));
-app.use(logger());
-app.use(serve('./build'));
-app.use(cors(false));
-app.use(bodyparser());
-app.use(jwt({
-    secret: jwksRsa.koaJwtSecret({
+const authCheck = jwt({
+    secret: jwks.expressJwtSecret({
         cache: true,
         rateLimit: true,
-        jwksRequestsPerMinute: 2,
-        jwksUri: `${jwksHost}/.well-known/jwks.json`
+        jwksRequestsPerMinute: 5,
+        // YOUR-AUTH0-DOMAIN name e.g prosper.auth0.com
+        jwksUri: "https://{YOUR-AUTH0-DOMAIN}/.well-known/jwks.json"
     }),
-    audience,
-    issuer,
-    algorithms: [ 'RS256' ]
-}));
-
-
-router.get('/data', (ctx, next) => {
-    console.log(ctx);
-    ctx.body = data;
-});
-app.use(router.middleware());
-app.use(router.routes());
-
-const server = app.listen(port, function () {
-    let host = server.address().address;
-    let port = server.address().port;
-    console.log('listening at http://%s:%s', host, port);
+    // This is the identifier we set when we created the API
+    audience: '{YOUR-API-AUDIENCE-ATTRIBUTE}',
+    issuer: '{YOUR-AUTH0-DOMAIN}',
+    algorithms: ['RS256']
 });
 
+app.

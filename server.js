@@ -1,3 +1,4 @@
+const express = require('express');
 const app = express();
 const jwt = require('express-jwt');
 const jwks = require('jwks-rsa');
@@ -22,4 +23,10 @@ const authCheck = jwt({
     algorithms: ['RS256']
 });
 
-app.
+app.get('/data', (req, res) => {
+    const information = { testerKey: 'Properties'};
+    res.json(information);
+});
+
+app.listen(3000);
+console.log("Listening on port 3000");

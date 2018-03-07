@@ -4,19 +4,22 @@ import { Link } from 'react-router';
 
 import SignInForm from './SignInForm';
 import Greeting from '../components/greeting';
-import { KEY as HOMEPAGE_KEY } from '../constants/homepage_constants';
+import Nav from './Nav';
 
+import styles from './homepage.css';
+
+import { KEY as HOMEPAGE_KEY } from '../constants/homepage_constants';
 
 class Homepage extends Component {
     render () {
         const { greeting } = this.props;
         return (
-            <div className="homepage">
+            <div className={styles.homepage}>
+                <Nav />
                 {
                     // <Header /> - Welcome to the HVCC online student aid portal
                     // <HVCC Icon />
                 }
-                <Link to="profile">Click to display my details!</Link>
                 { this.props.children }
                 <SignInForm />
             </div>

@@ -7,7 +7,7 @@ class Nav extends Component {
 
     render() {
         return (
-            <nav className="navbar navbar-default">
+            <nav className="navbar navbar-default" style={ {border: "20px groove #294d35"} }>
                 <div className="navbar-header">
                     <Link className="navbar-brand" to="/">HVCC Student Portal</Link>
                 </div>

@@ -21,7 +21,6 @@ class Homepage extends Component {
                     // <HVCC Icon />
                 }
                 { this.props.children }
-                <SignInForm />
             </div>
         );
     }

@@ -6,12 +6,12 @@ import { KEY as INSTRUCTOR_PAGE_KEY } from '../constants/instructorPage_constant
 
 class InstructorPage extends Component {
     render() {
-        const { instructors } = this.props;
+        const { instructors: instructors1 } = this.props;
         {
             // Header
             // Nav
         }
-        <InstructorList instructors={instructors}/>
+        <InstructorList instructors={instructors1}/>
     }
 }
 
@@ -24,7 +24,7 @@ const mapStateToProps = function (state) {
     } = state;
     //@formatter:on
     return {
-        instructors,
+        instructors
     };
 };
 

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 export default class InstructorList extends Component {
 
     //@TODO: pull instructors from Application state - MapStateToProps / Create a data store for list of instructors

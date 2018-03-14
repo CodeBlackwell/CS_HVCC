@@ -13,7 +13,7 @@ class Nav extends Component {
                 </div>
                 <ul className="nav navbar-nav">
                     <li>
-                        <Link to="/instructors">Instructors</Link>
+                        <Link to="/login">LOGIN</Link>
                     </li>
                     <li>
                         {

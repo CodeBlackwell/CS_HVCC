@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
 
-import SignInForm from './SignInForm';
-import Greeting from '../components/greeting';
 import Nav from './Nav';
 
 import styles from './homepage.css';
@@ -19,6 +16,7 @@ class Homepage extends Component {
                 {
                     // <Header /> - Welcome to the HVCC online student aid portal
                     // <HVCC Icon />
+                    // <Footer />
                 }
                 { this.props.children }
             </div>

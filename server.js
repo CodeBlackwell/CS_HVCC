@@ -36,6 +36,9 @@ app.get('/authorized', authCheck, (req, res) => {
     res.send('secured resource');
 });
 
+app.get('*', function(req, res) {
+    res.sendFile(path.resolve(__dirname, 'build/index.html'));
+});
 
 app.listen(3000);
 console.log("Listening on port 3000");

@@ -1,0 +1,16 @@
+header {
+    border: 3px solid darkgreen;
+    display: table;
+    height: 100px;
+    width: 100%;
+    background-color: #294d35;
+}
+
+.cbHeaderText {
+    color: #fff;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 30px;
+    font-family: 'Oswald', sans-serif;
+    line-height: 50px;
+}

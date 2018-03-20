@@ -1,0 +1,1 @@
+export const headerGreetingText = 'HVCC Student Aid Portal';

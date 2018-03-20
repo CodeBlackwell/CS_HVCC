@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Nav from './Nav';
+import Header from '../components/header/header';
 
 import styles from './homepage.css';
 
@@ -12,6 +13,7 @@ class Homepage extends Component {
         const { greeting } = this.props;
         return (
             <div className={styles.homepage}>
+                <Header />
                 <Nav />
                 {
                     // <Header /> - Welcome to the HVCC online student aid portal
